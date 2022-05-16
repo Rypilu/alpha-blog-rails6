@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # pages controller with home method/action
   root 'pages#home'
   get 'about', to: 'pages#about'
-  resources :articles , only: [:show, :index, :new, :create, :edit, :update]
+  # exposes all restful routes :show, :index, :new, :create, :edit, :update, :destroy
+  resources :articles
 end
