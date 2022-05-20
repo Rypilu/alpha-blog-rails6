@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   # exposes all restful routes :show, :index, :new, :create, :edit, :update, :destroy
   resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
