@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # rails knows this is pointed to app/controllers/pages_controller.rb
+  # rails knows this is pointed to app/controllers/...
   # after controller name the #pages is the name of the method.
   # This is telling rails to expect a home method in the pages.controller.rb
   # pages controller with home method/action
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  resources :categories, except: [:destroy]
 end
